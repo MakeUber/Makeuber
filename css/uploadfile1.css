@@ -1,0 +1,107 @@
+.ajax-file-upload-statusbar {
+    border: 1px solid #0ba1b5;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin: 5px;
+    border-radius: 4px;
+    padding: 5px 5px 5px 5px;
+}
+.ajax-file-upload-filename {
+    width: 100%;
+    height: auto;
+    margin: 0 5px 5px 10px;
+    color: #807579;
+}
+.ajax-file-upload-progress {
+    margin: 0 10px 5px 10px;
+    position: relative;
+    width: 250px;
+    border: 1px solid #ddd;
+    padding: 1px;
+    border-radius: 3px;
+    display: inline-block
+}
+.ajax-file-upload-bar {
+    background-color: #0ba1b5;
+    width: 0;
+    height: 20px;
+    border-radius: 3px;
+    color:#fff;
+}
+.ajax-file-upload-percent {
+    position: absolute;
+    display: inline-block;
+    top: 3px;
+    left: 48%
+}
+.ajax-file-upload-red {
+    box-shadow: inset 0 39px 0 -24px #e67a73;
+    background-color: #e4685d;
+    border-radius: 4px;
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 15px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #b23e35;
+    cursor: pointer;
+    vertical-align: top;
+    margin-right:5px;
+}
+.ajax-file-upload-green {
+    background-color: #77b55a;
+    border-radius: 4px;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: #fff;
+    font-size: 13px;
+    padding: 4px 15px;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #5b8a3c;
+    vertical-align: top;
+    margin-right:5px;
+}
+.ajax-file-upload {
+  	padding: 6px 12px;
+  	cursor:pointer;
+  	margin:10px;
+    font-size: 14px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 6px 10px 4px 10px; 
+    color: #fff;
+    background: #2f8ab9;
+    border:1px solid #428bca;
+    vertical-align: middle;
+}
+  
+.ajax-file-upload:hover {
+    background: #3396c9;
+}
+
+.ajax-upload-dragdrop
+{
+    border: 2px dotted #888;
+    color: #aaa;
+    margin:10px;
+    text-align:left;
+    vertical-align:middle;
+    padding:10px 10px 10px 10px;
+    float: left;
+}
+
+.ajax-upload-dragdrop b{
+    font-weight: 400;
+}
+
+.ajax-upload-dragdrop.state-hover
+{
+    border: 2px solid #A5A5C7;
+}
+
+.ajax-file-upload-error {
+    color: red;
+}

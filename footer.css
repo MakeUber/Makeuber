@@ -1,0 +1,38 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.2;
+}
+
+/* required for sticky footer */
+
+html, body {
+	height: 100%;
+}
+
+footer .wrapper > div > a > p {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+div .wrapper    {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+a .wrapper   p {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+}
+ p .wrapper   {
+  min-height: 100%;
+  height: auto !important;
+  heig
+/* end required for sticky footer */
+
+

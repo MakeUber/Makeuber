@@ -1,0 +1,49 @@
+	.navbar-left {
+    position: absolute;
+    left: 150px;
+    width: 300px;
+   }
+   .navbar-right {
+    position: absolute;
+    right: 200px;
+    width: 300px;
+	}
+   .navbar-rights {
+    position: absolute;
+    right: 80px;
+    width: 300px;
+	}
+		.searchBelowLinksList .searchBelow1
+	{
+		width:332px;
+		position:relative;
+		right:240px;
+	}
+	
+	
+	
+	<!..... Placement ... > 
+		.place
+	{
+		position : absolute ; 
+		top :622px; 	
+	}
+	.vid
+	{
+	   position:absolute;
+	   top : 150px;
+	   left:700px;
+	}
+	
+	.blackpage
+	{
+	   position: absolute;
+	   top : 1385px;
+	   left:0px;
+	}
+	.yellowpage
+	{
+		position: absolute;
+		top : 2090px;
+		left:0px;
+	}

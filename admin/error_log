@@ -1,0 +1,1 @@
+[29-Aug-2014 17:52:09 Asia/Kolkata] PHP Fatal error:  Allowed memory size of 67108864 bytes exhausted (tried to allocate 18432 bytes) in /home/lisamohapatra/public_html/admin/include/image_resize.php on line 13

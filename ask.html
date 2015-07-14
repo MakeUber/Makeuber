@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+	MakeUber
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset = "UTF-8">
+<link rel ="stylesheet" href="css/bootstrap.min.css">
+<link rel ="stylesheet" href="css/style.css">
+<link rel ="stylesheet" href="css/font-awesome.min.css">
+<script src = "js/jquery.js" type="text/javascript"></script>
+<script src ="js/bootstrap.min.js" type="text/javascript"></script>
+<script src = "js/jquery.lazy.min.js" type="text/javascript"></script>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+<style type="text/css">
+	.front-button:hover{
+		color:#fff;
+	}
+	.usr-img{
+		height:50px;
+		width: 50px;
+		margin-left:20px;
+	}
+	.top-comment .usr-img{
+		height: 30px;
+		width: 30px;
+	}
+	.question-title{
+		font-size: 18px;
+		color:#d6d3c4;
+	}
+	.question-content{
+		padding:10px;
+		margin-left: 40px;
+		background:#f8ecde;
+	}
+	.likes{
+		margin-left:50px;
+		margin-bottom:10px;
+		background:#e8866c;
+		color:#fff;"
+	}
+	.comment{
+		background:#f8ecde;
+		min-height: 30px;
+		margin-bottom: 10px;
+	}
+	.top-comment{
+		margin-left: 20px;
+	}
+	.question{
+		margin-bottom: 10px;
+	}
+	a.list-group-item{
+		background:#f79b2e;
+		color:#fff;
+	}
+	.list-group-item span{
+		background:#fff;
+		color:#428bca;
+	}
+	a.list-group-item:hover{
+		background:#ed6639;
+	}
+	a.list-group-item.active,a.list-group-item.active:focus,a.list-group-item.active:hover{
+		background:#ed6639;
+	}
+
+
+</style>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('.feedback').data('hidden','false');
+		$('#icon a').on('click',function(e){
+			e.preventDefault();
+			if($('.feedback').data('hidden')=='false'){
+				$('.feedback').animate({right:'0%'},1000);
+				$('.feedback').data('hidden','true');
+				$('body').append($('<div class="blur"></div>'));
+			}
+			else{
+				$('.feedback').animate({right:'-32.7%'},1000);
+				$('.feedback').data('hidden','false');
+				$('.blur').remove();
+			}
+		});
+		$('#feed-close').on('click',function(e){
+			e.preventDefault();
+			if($('.feedback').data('hidden')=='true'){
+				$('.feedback').animate({right:'-32.7%'},1000);
+				$('.feedback').data('hidden','false');
+				$('.blur').remove();
+			}
+		});
+		$('a.list-group-item').on('click',function(){
+			$(this).parent().find('a.active').removeClass('active');
+			$(this).addClass('active');
+		});
+		
+	});
+</script>
+</head>
+<body style="font-family:'Ubuntu',sans-serif;font-size:15px;">
+
+<div class="container-fluid" id="wrapper" style="background:#ccddee;">
+</div>
+
+<!-- ---------------------Header ------------------------------- -->
+<div id="header" class="container row">
+	<div class="col-sm-4"><img src="Final_Logo.png" data-src="Final_Logo.png"></div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#logo img').lazy();
+		});
+	</script>
+	<div class="col-sm-8">
+	<div id="contacts" class="row" style="width:100%;height:40px;margin:5px;display:block;">
+	<div class="pull-right" style="padding:5px;text-align:center;background:#ccc;">
+		<strong>Contact Us @</strong>
+		<span class="icon-pencil"> reachus@makeuber.com</span>&nbsp;&nbsp;
+		<span class="icon-phone">+(91) 9900071655</span>
+	</div>
+	</div>
+	<div id="menu-bar">
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+		      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-menu">
+		        	<span class="sr-only">Toggle navigation</span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		        	<span class="icon-bar"></span>
+		      		</button>
+		    	</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse-menu">
+					<ul class="nav navbar-nav">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">How It Works</a></li>
+						<li><a href="#">Experts</a></li>
+						<li class="active"><a href="#">Ask</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+						<li><a href="register.html">Register</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div></div>
+</div>
+
+
+<!-- --------------------- FAKE HEADER --------------------------- -->
+<div id="fake-header" class="container">
+	<div class="row">
+		<div class="col-sm-4"><img height="50px" src="Final_Logo.png" data-src="Final_Logo.png"></div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#logo img').lazy();
+			});
+		</script>
+		<div class="col-sm-8">
+			<div id="contacts" class="row" style="width:100%;height:40px;margin:5px;display:block;">
+				<div class="pull-right" style="padding:5px;text-align:center;background:#ccc;">
+					<strong>Contact Us @</strong>
+					<span class="icon-pencil"> reachus@makeuber.com</span>&nbsp;&nbsp;
+					<span class="icon-phone">+(91) 9900071655</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ---------------------MODAL ------------------------------- -->
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span>
+				</button>
+				<div class="modal-title"><h2>Login</h2></div>
+			</div>
+			<div class="modal-body">
+				<ul class="nav nav-tabs" role="tablist">
+					<li class="active"><a href="#" role="tab" data-toggle="tab">Users</a></li>
+					<li><a role="tab" data-toggle="tab">Experts</a></li>
+				</ul>
+				<br>
+				<div class="tab-content">
+					<div class="tab-pane fade in active">
+						<div class="input-group input-modal">
+							<span class="input-group-addon icon-user"></span>
+							<input type="text" class="form-control" placeholder="Username"> 
+						</div>
+						<br>
+						<div class="input-group input-modal">
+							<span class="input-group-addon icon-lock"></span>
+							<input type="password" class="form-control" placeholder="Password"> 
+						</div><br>
+					<button type="button" class="btn btn-success">Sign In</button>&nbsp;&nbsp;&nbsp;
+					Or connect with <br><br>
+		        	<button type="button" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</button>
+		        	<button type="button" class="btn btn-primary"><i class="fa fa-google"></i> Google</button>
+		       	 	<button type="button" class="btn btn-primary"><i class="fa fa-twitter"></i> Twitter</button>
+					</div>
+					<div class="tab-pane fade"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--------------------- MAIN ------------------------ ---->
+<div id="main" class="row container" style="margin-top:10px;height:auto;">
+	<div class="col-sm-2" style="padding:10px;background:#fff;">
+		<h4>Filter By Topic</h4> <br>
+		<div class="list-group">
+			<a href="#" class="list-group-item">
+				<span class="badge">14</span>Design
+			</a>
+			<a href="#" class="list-group-item">
+				<span class="badge">10</span>Material
+			</a>
+			<a href="#" class="list-group-item">
+				<span class="badge">10</span>Others
+			</a>
+		</div>
+	</div>
+	<div class="col-sm-9 col-sm-offset-1" style="padding:10px;padding-bottom:30px;background:#2eafb0;color:#fff;">
+		<h2>Ask Learn &amp; Share</h2>
+		<a class="btn btn-default" data-toggle="modal" data-target="#ask-modal" style="margin:10px;"><i class="fa fa-meh-o"></i> Ask A Question!</a>
+	</div>
+</div>
+
+
+<!---------------------------FEEDBACK ----------------- -->
+<div class="feedback">
+	<div id="icon">
+		<a href="#" style="text-decoration:none;">Feedback</a>
+	</div>
+	<div id="feed-content"><div id="fas">
+		<button type="button" id="feed-close" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+		<h4>Your Feedback</h4><hr><br>
+		<input type="text" class="form-control" placeholder="Your Name"><br>
+		<input type="email" class="form-control" placeholder="Your Email"><br>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a role="tab" data-toggle="tab">Problem</a></li>
+			<li><a role="tab" data-toggle="tab">Suggestion</a></li>
+			<li><a role="tab" data-toggle="tab">Compliment</a></li>
+			<li><a role="tab" data-toggle="tab">Other</a></li>
+		</ul><br>
+		<div class="tab-content">
+			<div class="tab-pane fade in active">
+				<textarea class="form-control" placeholder="Please Enter Your Feedback and press submit"></textarea>
+			</div>
+		</div>
+		<br>
+		<button class="btn btn-success" type="button">Submit Feedback</button>
+	</div></div>
+</div>
+
+
+<!-- ---------------------  ASK MODAL ----------------------- -->
+<div class="modal fade" id="ask-modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">	
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h4 class="modal-title">Ask A Question</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form" class="form-horizontal" style="margin-left:20px;">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Category</label>
+						<div class="col-sm-10">
+							<select class="form-control">
+								<option>Design</option>
+								<option>Material</option>
+								<option>Others</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group"><input type="text" style="clear:both;" class="form-control" placeholder="Example Title : Need help for my kitchen!"></div>
+					<div class="form-group"><textarea class="form-control" placeholder="Tell us the details here. Be sure to attach photos, if you have them!" rows="3" cols="50"></textarea></div>
+					<div class="form-group">
+						<a>Attach Images</a>
+					</div>
+					<a class="btn btn-success">&#63; Ask</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ------------------ POSTS----------------------- -->
+<div class="row" style="margin-top:10px;">
+	<div class="posts col-sm-9 col-sm-offset-3" style="background:#fff;">
+		<h4 style="color:#ee4b3e">Some Popular Questions</h4>
+		<div class="question row">
+			<div class="col-sm-1"><img src="" class="usr-img"></div><div class="col-sm-11" style="background:#828e8c;color:#fff;"><span class="question-title">Wall Paper</span><br>--<span style="font-size:14px;">14/10/14 By Pankaj (Material)</span></div>
+			<div class="question-content col-sm-12">Hi Would like to know whether to put tiles on wall or wall papers.</div>
+			<div class="likes col-sm-12"><i class="fa fa-thumbs-up"></i><span class="like"> 20 </span><i class="fa fa-comments"></i><span class="comments"> 3 </span></div>
+			<div class="top-comment row col-sm-12">
+				<div class="col-sm-1"><img src="" class="usr-img"></div><div class="comment col-sm-10">
+					Megha Jain: Hello: Wall papers as well as wall tiles both are good option. Now a days there are so many options in the market like if you want to use something like tiles than 3D wall tiles wallpaper is also available so you can use that also or you can use wall cladding too.
+				</div>
+			</div>
+		</div>
+		<div class="question row">
+			<div class="col-sm-1"><img src="" class="usr-img"></div><div class="col-sm-11" style="background:#828e8c;color:#fff;"><span class="question-title">Garden Entrance</span><br>--<span style="font-size:14px;">14/10/14 By Ashok (Design)</span></div>
+			<div class="question-content col-sm-12">Need options for garden pathway and entrance </div>
+			<div class="likes col-sm-12"><i class="fa fa-thumbs-up"></i><span class="like"> 20 </span><i class="fa fa-comments"></i><span class="comments"> 3 </span></div>
+			<div class="top-comment row col-sm-12">
+				<div class="col-sm-1"><img src="" class="usr-img"></div><div class="comment col-sm-10">					
+					Megha Jain: Hello Ashok: Yes there are so many ideas for the entrance but it depends on the size as well as your choice too. So if you genuinely need ideas/designs give me your ID we will definitely help you out in this.
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+
+<!----------------------------FOOTER------------------- -->
+<div id="footer" class="row" style="margin-top:30px;">
+	<div class="col-sm-3" style="font-size:25pt;padding:20px;">
+		<i class="fa fa-facebook-square">&nbsp;</i>
+		<i class="fa fa-google-plus-square">&nbsp;</i>
+		<i class="fa fa-twitter-square">&nbsp;</i>
+		<i class="fa fa-linkedin-square">&nbsp;</i>
+	</div>
+	<div class="col-sm-6" style="text-align:center;">
+		<span style="font-size:20px;font-family: 'Yanone Kaffeesatz', sans-serif;">Choose Your Expert II Take Inspirations II Ask for Advice II Talk to fellow Home Owners II Upload Your Creative Ideas II Start Your Project
+		<br>Make Your Spaces the "Uber" Way</span>
+	</div>
+	<div class="col-sm-3" style="font-size:15px;">
+		<p><strong>Contact Us @</strong><br>
+		<span class="icon-pencil"> reachus@makeuber.com</span>&nbsp;&nbsp;<br>
+		<span class="icon-phone">+(91) 9900071655</span></p>
+	</div>
+	<div class="col-sm-12">
+		<hr style="border:1px solid #111;margin-bottom:10px;">
+	</div>
+	<div class="col-sm-10">
+		<ul class="footer-menu">
+			<li><a href="makeuber.html">Home</a></li>
+			<li><a href="howitworks.html">How It Works</a></li>
+			<li><a href="#">Experts</a></li>
+			<li class="active"><a href="ask.html">Ask</a></li>
+			<li><a href="blog.html">Blog</a></li>
+			<li><a href="register.html">Register</a></li>
+			<li><a href="#">About us</a></li>
+		</ul>
+	</div>
+	<div class="col-sm-2">
+		<strong>&copy; 2014 | <a href="#">Privacy Policy</a></strong>
+	</div>
+</div>
+
+</body>
+</html>

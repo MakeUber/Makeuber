@@ -1,0 +1,29 @@
+	
+			<script type="text/javascript">
+			// Slider Code 
+			jQuery(function($){
+				
+				$.supersized({
+				
+					// Functionality
+					slide_interval          :   3000,		// Length between transitions
+					transition              :   3, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	700,		// Speed of transition
+															   
+					// Components							
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+														{image : 'img/1-c.jpg',  thumb : 'MakeUber'},
+														{image : 'img/2-c.jpg', thumb : 'MakeUber'},  
+														{image : 'img/3-c.jpg',  thumb : 'MakeUber'},
+														{image : 'img/4-c.jpg',  thumb : 'MakeUber'},
+														
+												]
+					
+				});
+		    });
+		    
+	</script>
+	<div class="vid"> 
+				<iframe width="380" height="211" src="http://www.powtoon.com/embed/e5k1UGHvnSl/" frameborder="0"></iframe>
+			</div> 
